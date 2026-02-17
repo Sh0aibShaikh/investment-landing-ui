@@ -6,13 +6,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-
-const FOOTER_LINKS = {
-  Products: ["Bonds", "Mutual Funds", "Fixed Deposits", "Portfolio Tracker"],
-  Company: ["About Us", "Careers", "Press", "Blog"],
-  Support: ["Help Centre", "Contact Us", "Risk Disclosure", "Grievances"],
-  Legal: ["Privacy Policy", "Terms of Use", "SEBI Disclosures", "Investor Charter"],
-};
+import { FOOTER_LINKS } from "@/constants/constants";
 
 export default function Footer() {
   const theme = useTheme();
@@ -29,7 +23,6 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          {/* Brand column */}
           <Grid size={{ xs: 12, md: 4 }}>
             <Stack direction="row" alignItems="center" spacing={1.5} mb={2}>
               <Box
@@ -80,9 +73,8 @@ export default function Footer() {
               ))}
             </Stack>
           </Grid>
-          {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 6, md: 4 }}>
               <Typography
                 variant="caption"
                 sx={{
@@ -122,7 +114,6 @@ export default function Footer() {
 
         <Divider sx={{ my: 5, borderColor: theme.palette.divider }} />
 
-        {/* Bottom bar */}
         <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" alignItems="center" spacing={2}>
           <Typography
             variant="caption"

@@ -48,7 +48,6 @@ export default function HeroSection() {
         alignItems: "center",
       }}
     >
-      {/* ── Background radial glows ── */}
       <Box
         sx={{
           position: "absolute",
@@ -78,7 +77,6 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── Subtle grid pattern ── */}
       <Box
         sx={{
           position: "absolute",
@@ -96,9 +94,7 @@ export default function HeroSection() {
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1, py: { xs: 4, md: 10 } }}>
         <Stack direction={{ xs: "column", md: "row" }} alignItems="center" spacing={{ xs: 6, md: 4 }}>
-          {/* ── LEFT: Text content ── */}
           <Box sx={{ flex: 1, maxWidth: { md: "56%" } }}>
-            {/* Badge */}
             <Box
               sx={{
                 animation: `${fadeUp} 0.6s ease both`,
@@ -123,7 +119,6 @@ export default function HeroSection() {
               />
             </Box>
 
-            {/* Headline */}
             <Box sx={{ animation: `${fadeUp} 0.6s ease both`, animationDelay: "0.2s" }}>
               <Typography
                 variant="h1"
@@ -163,7 +158,6 @@ export default function HeroSection() {
               </Typography>
             </Box>
 
-            {/* Subheading */}
             <Box
               sx={{
                 animation: `${fadeUp} 0.6s ease both`,
@@ -189,7 +183,6 @@ export default function HeroSection() {
               </Typography>
             </Box>
 
-            {/* CTAs */}
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={2}
@@ -228,7 +221,6 @@ export default function HeroSection() {
               </Button>
             </Stack>
 
-            {/* Trust row */}
             <Stack
               direction="row"
               spacing={3}
@@ -263,7 +255,6 @@ export default function HeroSection() {
             </Stack>
           </Box>
 
-          {/* ── RIGHT: Floating cards ── */}
           <Box
             sx={{
               flex: 1,
@@ -274,7 +265,6 @@ export default function HeroSection() {
               animationDelay: "0.4s",
             }}
           >
-            {/* Main portfolio card */}
             <Box
               sx={{
                 position: "absolute",
@@ -321,7 +311,6 @@ export default function HeroSection() {
                 </Box>
               </Stack>
 
-              {/* Mini chart bars */}
               <Stack direction="row" alignItems="flex-end" spacing={0.8} sx={{ height: 56, mb: 2.5 }}>
                 {[35, 52, 45, 68, 58, 75, 62, 88, 72, 95, 84, 100].map((h, i) => (
                   <Box
@@ -350,7 +339,6 @@ export default function HeroSection() {
               </Stack>
             </Box>
 
-            {/* Floating returns card */}
             <Box
               sx={{
                 position: "absolute",
@@ -385,7 +373,6 @@ export default function HeroSection() {
               </Stack>
             </Box>
 
-            {/* Floating security badge */}
             <Box
               sx={{
                 position: "absolute",

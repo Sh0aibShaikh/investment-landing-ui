@@ -99,7 +99,6 @@ export default function CTASection() {
             paperless, fully regulated.
           </Typography>
 
-          {/* Email signup */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={1.5}
@@ -138,7 +137,6 @@ export default function CTASection() {
             </Button>
           </Stack>
 
-          {/* Trust line */}
           <Stack direction="row" spacing={2} justifyContent="center" flexWrap="wrap">
             {["No lock-in period", "SEBI Regulated", "₹0 account opening fee"].map((item, i) => (
               <Typography

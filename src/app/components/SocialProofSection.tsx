@@ -4,40 +4,12 @@ import { Box, Container, Grid, Stack, Typography, useTheme } from "@mui/material
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import StarIcon from "@mui/icons-material/Star";
 import { keyframes } from "@mui/system";
+import { PARTNER_LOGOS, TESTIMONIALS } from "@/constants/constants";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 `;
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "InvestPro helped me move from low-yield FDs to bonds earning 11.2% annually. The transparency and safety gave me confidence I never had before.",
-    name: "Priya Mehta",
-    role: "Chartered Accountant, Mumbai",
-    rating: 5,
-    returns: "11.2% p.a.",
-  },
-  {
-    quote:
-      "The auto-invest feature is brilliant. My idle cash now earns 9.8% without me touching it. Payouts hit every quarter like clockwork.",
-    name: "Rahul Singhania",
-    role: "Software Engineer, Bangalore",
-    rating: 5,
-    returns: "9.8% p.a.",
-  },
-  {
-    quote:
-      "As a retired professional, capital safety is everything. InvestPro's zero-default track record and senior secured bonds gave me exactly that.",
-    name: "Dr. V. Krishnamurthy",
-    role: "Retired IAS Officer, Chennai",
-    rating: 5,
-    returns: "10.5% p.a.",
-  },
-];
-
-const PARTNER_LOGOS = ["NSE", "BSE", "SEBI", "NSDL", "CRISIL", "ICRA"];
 
 export default function SocialProofSection() {
   const theme = useTheme();
@@ -66,7 +38,6 @@ export default function SocialProofSection() {
       }}
     >
       <Container maxWidth="lg">
-        {/* Partner logos strip */}
         <Box
           sx={{
             mb: { xs: 8, md: 10 },
@@ -121,7 +92,6 @@ export default function SocialProofSection() {
           </Stack>
         </Box>
 
-        {/* Section header */}
         <Box
           sx={{
             textAlign: "center",
@@ -149,7 +119,6 @@ export default function SocialProofSection() {
           </Typography>
         </Box>
 
-        {/* Testimonial cards */}
         <Grid container spacing={3}>
           {TESTIMONIALS.map((t, i) => (
             <Grid key={t.name} size={{ xs: 12, md: 4 }}>
@@ -170,14 +139,12 @@ export default function SocialProofSection() {
                   },
                 }}
               >
-                {/* Stars */}
                 <Stack direction="row" spacing={0.3} mb={2}>
                   {Array.from({ length: t.rating }).map((_, s) => (
                     <StarIcon key={s} sx={{ fontSize: 16, color: theme.palette.primary.main }} />
                   ))}
                 </Stack>
 
-                {/* Quote */}
                 <FormatQuoteIcon sx={{ color: `${theme.palette.primary.main}40`, fontSize: 32, mb: 1, ml: -0.5 }} />
                 <Typography
                   variant="body2"
@@ -191,7 +158,6 @@ export default function SocialProofSection() {
                   {t.quote}
                 </Typography>
 
-                {/* Author */}
                 <Stack direction="row" alignItems="center" justifyContent="space-between">
                   <Box>
                     <Typography

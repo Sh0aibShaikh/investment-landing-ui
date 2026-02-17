@@ -3,7 +3,6 @@
 import {
   Box,
   Button,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -41,7 +40,6 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
         },
       }}
     >
-      {/* ── Header ── */}
       <Box
         sx={{
           display: "flex",
@@ -67,16 +65,9 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
               flexShrink: 0,
             }}
           >
-            <TrendingUpIcon
-              sx={{ color: theme.palette.primary.contrastText, fontSize: 20 }}
-            />
+            <TrendingUpIcon sx={{ color: theme.palette.primary.contrastText, fontSize: 20 }} />
           </Box>
-          <Typography
-            fontWeight={800}
-            fontSize="1.05rem"
-            color={theme.palette.text.primary}
-            letterSpacing="-0.3px"
-          >
+          <Typography fontWeight={800} fontSize="1.05rem" color={theme.palette.text.primary} letterSpacing="-0.3px">
             InvestPro
           </Typography>
         </Stack>
@@ -101,7 +92,6 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
         </IconButton>
       </Box>
 
-      {/* ── Nav Section Label ── */}
       <Typography
         variant="caption"
         sx={{
@@ -119,7 +109,6 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
         Navigation
       </Typography>
 
-      {/* ── Nav Links ── */}
       <List disablePadding sx={{ px: 1.5 }}>
         {navLinks.map((label) => (
           <ListItemButton
@@ -172,10 +161,8 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
         ))}
       </List>
 
-      {/* ── Spacer ── */}
       <Box sx={{ flexGrow: 1 }} />
 
-      {/* ── Footer CTA ── */}
       <Box
         sx={{
           px: 2.5,

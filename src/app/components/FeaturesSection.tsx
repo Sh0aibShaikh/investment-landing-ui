@@ -1,55 +1,14 @@
 "use client";
 
 import { Box, Button, Card, CardContent, Chip, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
-import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
-import AutoGraphOutlinedIcon from "@mui/icons-material/AutoGraphOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { keyframes } from "@mui/system";
+import { FEATURES } from "@/constants/constants";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 `;
-
-const FEATURES = [
-  {
-    icon: AccountBalanceOutlinedIcon,
-    badge: "Fixed Income",
-    badgeColor: "#E8B84B",
-    title: "Premium Bonds",
-    description:
-      "Invest in carefully curated senior secured bonds from top-rated corporates. Earn fixed 9–12% annual returns with principal protection and quarterly payouts.",
-    bullets: ["Senior secured instruments", "Quarterly interest payouts", "Start with ₹10,000"],
-    cta: "Explore Bonds",
-    gradient: "linear-gradient(135deg, rgba(232,184,75,0.08) 0%, transparent 60%)",
-    accentColor: "#E8B84B",
-  },
-  {
-    icon: AutoGraphOutlinedIcon,
-    badge: "High Yield",
-    badgeColor: "#2DD4BF",
-    title: "Mutual Funds",
-    description:
-      "Diversify across debt, equity, and hybrid funds managed by top AMCs. Our AI-driven portfolio optimizer picks the best mix for your risk profile.",
-    bullets: ["100+ curated fund options", "AI-powered allocation", "SIP from ₹500/month"],
-    cta: "Browse Funds",
-    gradient: "linear-gradient(135deg, rgba(45,212,191,0.08) 0%, transparent 60%)",
-    accentColor: "#2DD4BF",
-  },
-  {
-    icon: SecurityOutlinedIcon,
-    badge: "Capital Safe",
-    badgeColor: "#E8B84B",
-    title: "Fixed Deposits",
-    description:
-      "Partner bank FDs with returns up to 9.5% p.a. — significantly higher than traditional bank rates, with full DICGC insurance coverage up to ₹5 Lakh.",
-    bullets: ["Up to 9.5% interest", "DICGC insured", "Flexible tenures 7–365 days"],
-    cta: "View FD Rates",
-    gradient: "linear-gradient(135deg, rgba(232,184,75,0.08) 0%, transparent 60%)",
-    accentColor: "#E8B84B",
-  },
-];
 
 export default function FeaturesSection() {
   const theme = useTheme();
@@ -149,7 +108,6 @@ export default function FeaturesSection() {
                   }}
                 >
                   <CardContent sx={{ p: { xs: 3, md: 3.5 }, height: "100%", display: "flex", flexDirection: "column" }}>
-                    {/* Icon + badge */}
                     <Stack direction="row" alignItems="center" justifyContent="space-between" mb={3}>
                       <Box
                         sx={{
@@ -179,7 +137,6 @@ export default function FeaturesSection() {
                       />
                     </Stack>
 
-                    {/* Title & desc */}
                     <Typography variant="h5" sx={{ color: theme.palette.text.primary, mb: 1.5, fontWeight: 700 }}>
                       {feature.title}
                     </Typography>
@@ -187,7 +144,6 @@ export default function FeaturesSection() {
                       {feature.description}
                     </Typography>
 
-                    {/* Bullets */}
                     <Stack spacing={1} sx={{ mb: 3, flexGrow: 1 }}>
                       {feature.bullets.map((b, j) => (
                         <Stack key={j} direction="row" alignItems="center" spacing={1.2}>
@@ -207,7 +163,6 @@ export default function FeaturesSection() {
                       ))}
                     </Stack>
 
-                    {/* CTA */}
                     <Button
                       variant="text"
                       endIcon={<ArrowForwardIcon fontSize="small" />}

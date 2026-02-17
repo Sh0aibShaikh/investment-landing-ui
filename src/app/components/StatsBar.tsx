@@ -1,43 +1,13 @@
 "use client";
 
+import { STATS } from "@/constants/constants";
 import { Box, Container, Divider, Stack, Typography, useTheme } from "@mui/material";
-import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
-import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
-import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import { keyframes } from "@mui/system";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 `;
-
-const STATS = [
-  {
-    icon: AccountBalanceOutlinedIcon,
-    value: "₹2,400Cr+",
-    label: "Assets Under Management",
-    color: "#E8B84B",
-  },
-  {
-    icon: GroupsOutlinedIcon,
-    value: "1.2 Lakh+",
-    label: "Verified Investors",
-    color: "#2DD4BF",
-  },
-  {
-    icon: VerifiedOutlinedIcon,
-    value: "100%",
-    label: "Repayment Rate",
-    color: "#E8B84B",
-  },
-  {
-    icon: WorkspacePremiumOutlinedIcon,
-    value: "9–14%",
-    label: "Average Annual Returns",
-    color: "#2DD4BF",
-  },
-];
 
 export default function StatsBar() {
   const theme = useTheme();
