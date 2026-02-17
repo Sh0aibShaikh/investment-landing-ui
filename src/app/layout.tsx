@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import Providers from "./components/Providers";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import Navbar from "./components/navbar/Navbar";
+import Providers from "./components/Providers";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -21,10 +22,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={dmSans.variable}>
       <body className={dmSans.className}>
-        <Providers>
-          <Navbar />
-          {children}
-        </Providers>
+        <AppRouterCacheProvider>
+          <Providers>
+            <Navbar />
+            {children}
+          </Providers>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

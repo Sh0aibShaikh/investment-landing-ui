@@ -4,7 +4,7 @@ import { Box, Container, Grid, Stack, Typography, useTheme } from "@mui/material
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import StarIcon from "@mui/icons-material/Star";
 import { keyframes } from "@mui/system";
-import { PARTNER_LOGOS, TESTIMONIALS } from "@/constants/constants";
+import { PARTNER_LOGOS, TESTIMONIALS } from "@/app/constants/constants";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(20px); }

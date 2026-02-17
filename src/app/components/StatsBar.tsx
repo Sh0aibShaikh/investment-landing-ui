@@ -1,6 +1,6 @@
 "use client";
 
-import { STATS } from "@/constants/constants";
+import { STATS } from "@/app/constants/constants";
 import { Box, Container, Divider, Stack, Typography, useTheme } from "@mui/material";
 import { keyframes } from "@mui/system";
 

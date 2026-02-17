@@ -6,7 +6,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { FOOTER_LINKS } from "@/constants/constants";
+import { FOOTER_LINKS } from "@/app/constants/constants";
 
 export default function Footer() {
   const theme = useTheme();
@@ -74,7 +74,7 @@ export default function Footer() {
             </Stack>
           </Grid>
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (
-            <Grid size={{ xs: 6, md: 4 }}>
+            <Grid key={category} size={{ xs: 6, md: 4 }}>
               <Typography
                 variant="caption"
                 sx={{

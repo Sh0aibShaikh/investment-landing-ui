@@ -3,7 +3,7 @@
 import { Box, Button, Card, CardContent, Chip, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { keyframes } from "@mui/system";
-import { FEATURES } from "@/constants/constants";
+import { FEATURES } from "@/app/constants/constants";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(28px); }

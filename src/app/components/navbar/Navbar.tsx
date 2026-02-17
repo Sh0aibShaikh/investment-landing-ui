@@ -5,7 +5,7 @@ import { AppBar, Toolbar, Typography, Box, Button, Container, IconButton, Stack,
 import MenuIcon from "@mui/icons-material/Menu";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import MobileDrawer from "./MobileDrawer";
-import { NAV_LINKS } from "@/constants/constants";
+import { NAV_LINKS } from "@/app/constants/constants";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
