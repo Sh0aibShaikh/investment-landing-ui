@@ -3,6 +3,8 @@
 import { STATS } from "@/app/constants/constants";
 import { Box, Container, Divider, Stack, Typography, useTheme } from "@mui/material";
 import { keyframes } from "@mui/system";
+import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
+import { CountingNumber } from "./CountingNumber";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -11,9 +13,11 @@ const fadeIn = keyframes`
 
 export default function StatsBar() {
   const theme = useTheme();
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.5 });
 
   return (
     <Box
+      ref={ref}
       component="section"
       sx={{
         backgroundColor: theme.palette.background.paper,
@@ -76,7 +80,7 @@ export default function StatsBar() {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  {stat.value}
+                  <CountingNumber value={stat.value} isAnimating={isVisible} />
                 </Typography>
                 <Typography
                   variant="body2"
