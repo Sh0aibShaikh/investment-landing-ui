@@ -41,7 +41,7 @@ export default function HeroSection() {
       id="home"
       sx={{
         position: "relative",
-        minHeight: { xs: "calc(100vh - 68px)", md: "calc(100vh - 76px)" },
+        minHeight: { xs: "auto", md: "calc(100vh - 76px)" },
         backgroundColor: theme.palette.background.default,
         overflow: "hidden",
         display: "flex",
@@ -94,7 +94,7 @@ export default function HeroSection() {
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1, py: { xs: 8, md: 10 } }}>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1, py: { xs: 4, md: 10 } }}>
         <Stack direction={{ xs: "column", md: "row" }} alignItems="center" spacing={{ xs: 6, md: 4 }}>
           {/* ── LEFT: Text content ── */}
           <Box sx={{ flex: 1, maxWidth: { md: "56%" } }}>
