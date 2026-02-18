@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Button, Card, CardContent, Chip, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Card, CardContent, Chip, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { keyframes } from "@mui/system";
 import { FEATURES } from "@/app/constants/constants";
+import AppButton from "./AppButton";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(28px); }
@@ -36,7 +37,6 @@ export default function FeaturesSection() {
       }}
     >
       <Container maxWidth="lg">
-        {/* Section header */}
         <Box
           sx={{
             textAlign: "center",
@@ -85,7 +85,6 @@ export default function FeaturesSection() {
           </Typography>
         </Box>
 
-        {/* Feature cards */}
         <Grid container spacing={3}>
           {FEATURES.map((feature, i) => {
             const Icon = feature.icon;
@@ -162,17 +161,11 @@ export default function FeaturesSection() {
                         </Stack>
                       ))}
                     </Stack>
-
-                    <Button
-                      variant="text"
+                    <AppButton
+                      variantType="textLink"
                       endIcon={<ArrowForwardIcon fontSize="small" />}
-                      href="#investments"
                       sx={{
                         color: feature.accentColor,
-                        fontWeight: 700,
-                        fontSize: "0.88rem",
-                        px: 0,
-                        justifyContent: "flex-start",
                         "&:hover": {
                           backgroundColor: "transparent",
                           gap: 1,
@@ -182,7 +175,7 @@ export default function FeaturesSection() {
                       }}
                     >
                       {feature.cta}
-                    </Button>
+                    </AppButton>
                   </CardContent>
                 </Card>
               </Grid>

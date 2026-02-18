@@ -3,7 +3,7 @@
 import { STATS } from "@/app/constants/constants";
 import { Box, Container, Divider, Stack, Typography, useTheme } from "@mui/material";
 import { keyframes } from "@mui/system";
-import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
+import { useEffect, useRef, useState } from "react";
 import { CountingNumber } from "./CountingNumber";
 
 const fadeIn = keyframes`
@@ -13,7 +13,30 @@ const fadeIn = keyframes`
 
 export default function StatsBar() {
   const theme = useTheme();
-  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.5 });
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   return (
     <Box

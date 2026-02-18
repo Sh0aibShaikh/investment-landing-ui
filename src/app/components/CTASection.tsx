@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Button, Container, Stack, TextField, Typography, useTheme } from "@mui/material";
+import { Box, Container, Stack, TextField, Typography, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { keyframes } from "@mui/system";
+import AppButton from "./AppButton";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(24px); }
@@ -53,7 +54,6 @@ export default function CTASection() {
             animation: `${fadeUp} 0.7s ease both`,
           }}
         >
-          {/* Icon */}
           <Box
             sx={{
               width: 64,
@@ -119,22 +119,14 @@ export default function CTASection() {
                 },
               }}
             />
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
+            <AppButton
+              variantType="primary"
+              href="#contact"
               endIcon={<ArrowForwardIcon />}
-              sx={{
-                px: 3.5,
-                py: 1.5,
-                borderRadius: "10px",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-                fontSize: "0.92rem",
-              }}
+              sx={{ whiteSpace: "nowrap", px: 3.5, py: 1.5, flexShrink: 0 }}
             >
               Get Started
-            </Button>
+            </AppButton>
           </Stack>
 
           <Stack direction="row" spacing={2} justifyContent="center" flexWrap="wrap">

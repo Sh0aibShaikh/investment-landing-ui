@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Button,
   Drawer,
   IconButton,
   List,
@@ -14,6 +13,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import AppButton from "../AppButton";
 
 interface MobileDrawerProps {
   open: boolean;
@@ -67,7 +67,7 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
           >
             <TrendingUpIcon sx={{ color: theme.palette.primary.contrastText, fontSize: 20 }} />
           </Box>
-          <Typography fontWeight={800} fontSize="1.05rem" color={theme.palette.text.primary} letterSpacing="-0.3px">
+          <Typography fontWeight={800} fontSize="16px" color={theme.palette.text.primary} letterSpacing="-0.3px">
             InvestPro
           </Typography>
         </Stack>
@@ -103,7 +103,7 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
           fontWeight: 600,
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          fontSize: "0.68rem",
+          fontSize: "12px",
         }}
       >
         Navigation
@@ -127,13 +127,11 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
               "&:hover": {
                 backgroundColor: `${theme.palette.primary.main}12`,
                 color: theme.palette.primary.main,
-                // left accent bar on hover
                 "&::before": {
                   opacity: 1,
                   transform: "scaleY(1)",
                 },
               },
-              // left accent bar
               "&::before": {
                 content: '""',
                 position: "absolute",
@@ -153,7 +151,7 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
               primary={label}
               primaryTypographyProps={{
                 fontWeight: 600,
-                fontSize: "0.95rem",
+                fontSize: "16px",
                 letterSpacing: "0.01em",
               }}
             />
@@ -171,33 +169,9 @@ export default function MobileDrawer({ open, onClose, navLinks }: MobileDrawerPr
           borderColor: theme.palette.divider,
         }}
       >
-        <Button
-          fullWidth
-          variant="contained"
-          color="primary"
-          href="#contact"
-          onClick={onClose}
-          sx={{
-            py: 1.6,
-            borderRadius: "10px",
-            fontWeight: 700,
-            fontSize: "0.9rem",
-            color: theme.palette.primary.contrastText,
-            backgroundColor: theme.palette.primary.main,
-            boxShadow: `0 4px 22px ${theme.palette.primary.main}40`,
-            transition: "all 0.2s ease",
-            "&:hover": {
-              backgroundColor: theme.palette.primary.light,
-              boxShadow: `0 6px 28px ${theme.palette.primary.main}60`,
-              transform: "translateY(-1px)",
-            },
-            "&:active": {
-              transform: "translateY(0)",
-            },
-          }}
-        >
+        <AppButton sx={{ width: "100%" }} variantType="primary" href="#contact">
           Get Started
-        </Button>
+        </AppButton>
 
         <Typography
           variant="caption"

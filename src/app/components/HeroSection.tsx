@@ -1,11 +1,12 @@
 "use client";
 
-import { Box, Button, Chip, Container, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Chip, Container, Stack, Typography, useTheme } from "@mui/material";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import { keyframes } from "@mui/system";
+import AppButton from "./AppButton";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(32px); }
@@ -188,37 +189,12 @@ export default function HeroSection() {
               spacing={2}
               sx={{ animation: `${fadeUp} 0.6s ease both`, animationDelay: "0.5s" }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                endIcon={<ArrowForwardIcon />}
-                href="#investments"
-                sx={{
-                  px: 4,
-                  py: 1.6,
-                  fontSize: "1rem",
-                  borderRadius: "12px",
-                  animation: `${pulse} 2.5s ease infinite`,
-                  animationDelay: "1s",
-                }}
-              >
+              <AppButton variantType="hero" endIcon={<ArrowForwardIcon />}>
                 Start Investing
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<PlayCircleOutlineIcon />}
-                href="#about"
-                sx={{
-                  px: 4,
-                  py: 1.6,
-                  fontSize: "1rem",
-                  borderRadius: "12px",
-                }}
-              >
+              </AppButton>
+              <AppButton variantType="outlined" startIcon={<PlayCircleOutlineIcon />}>
                 How It Works
-              </Button>
+              </AppButton>
             </Stack>
 
             <Stack

@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { AppBar, Toolbar, Typography, Box, Button, Container, IconButton, Stack, useTheme } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, Container, IconButton, Stack, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import MobileDrawer from "./MobileDrawer";
 import { NAV_LINKS } from "@/app/constants/constants";
+import AppButton from "../AppButton";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -95,7 +96,7 @@ export default function Navbar() {
                   color: theme.palette.text.primary,
                   fontWeight: 800,
                   letterSpacing: "-0.4px",
-                  fontSize: { xs: "1.1rem", md: "1.2rem" },
+                  fontSize: { xs: "18px", md: "18px" },
                   userSelect: "none",
                 }}
               >
@@ -105,53 +106,14 @@ export default function Navbar() {
 
             <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 0.25 }}>
               {NAV_LINKS.map((label) => (
-                <Button
-                  key={label}
-                  href={`#${label.toLowerCase()}`}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                    fontWeight: 500,
-                    fontSize: "0.875rem",
-                    px: 2,
-                    py: 1,
-                    borderRadius: "8px",
-                    letterSpacing: "0.01em",
-                    transition: "color 0.2s, background-color 0.2s",
-                    "&:hover": {
-                      color: theme.palette.text.primary,
-                      backgroundColor: "rgba(255,255,255,0.04)",
-                    },
-                  }}
-                >
+                <AppButton variantType="nav" href={`#${label.toLowerCase()}`}>
                   {label}
-                </Button>
+                </AppButton>
               ))}
 
-              <Button
-                variant="contained"
-                color="primary"
-                href="#contact"
-                sx={{
-                  ml: 2.5,
-                  px: 3.5,
-                  py: 1.1,
-                  fontSize: "0.875rem",
-                  fontWeight: 700,
-                  borderRadius: "10px",
-                  color: theme.palette.primary.contrastText,
-                  backgroundColor: theme.palette.primary.main,
-                  boxShadow: `0 4px 22px ${theme.palette.primary.main}45`,
-                  transition: "all 0.25s ease",
-                  "&:hover": {
-                    backgroundColor: theme.palette.primary.light,
-                    boxShadow: `0 6px 28px ${theme.palette.primary.main}65`,
-                    transform: "translateY(-1px)",
-                  },
-                  "&:active": { transform: "translateY(0)" },
-                }}
-              >
+              <AppButton sx={{ ml: 1 }} variantType="primary" href="#contact">
                 Get Started
-              </Button>
+              </AppButton>
             </Box>
 
             <IconButton
